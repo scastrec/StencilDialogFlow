@@ -12,7 +12,7 @@ export class AppHome {
   @State() loading : boolean;
 
   @Prop() url = "https://api.dialogflow.com/v1";
-  @Prop() access_token :string = "82c50d9c595548a5b57e72b93c5420d2";
+  @Prop() access_token :string = "";
   
   
   
