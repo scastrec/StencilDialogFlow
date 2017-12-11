@@ -1,0 +1,59 @@
+app-message {
+    div {
+        padding: 5px;
+    }
+    .container.me {
+        justify-content: flex-start;            
+    }
+    .container {
+        display : flex;
+        justify-content: flex-end;
+        align-items: center;
+        
+        .avatar {
+            margin-left: 15px;
+        }
+        .avatar.me{
+            margin-left: 0;
+            margin-right: 15px;            
+        }
+    }
+    .speech-bubble {
+        position: relative;
+        background: #e53935;
+        border-radius: .4em;
+        min-width: 100px;
+    }
+
+    .speech-bubble.me {
+        background: #ff6f60;        
+    }
+    
+    .speech-bubble:after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 50%;
+        width: 0;
+        height: 0;
+        border: 20px solid transparent;
+        border-left-color: #e53935;
+        border-right: 0;
+        margin-top: -20px;
+        margin-right: -20px;
+    }
+
+    .speech-bubble.me:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 0;
+        height: 0;
+        border: 20px solid transparent;
+        border-right-color: #ff6f60;
+        border-left: 0;
+        margin-top: -20px;
+        margin-left: -20px;     
+    }
+}

@@ -1,17 +1,45 @@
 app-home {
-  div {
-    padding: 10px;
+  overflow: hidden;
+
+  .main{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin-top: 56px;
+
+    .list {
+      flex: 1 1 auto;
+      margin-bottom: 66px;
+    }
+
+    .footer {
+      background: #FFF;
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      height: 56px;
+      display: flex;
+      input {
+        flex : 6;
+        font-size: 20px;
+      }
+      button {
+        flex : 1;
+      }
+    }
   }
+
+
 
   button {
     background: #5851ff;
     color: white;
-    margin: 8px;
     border: none;
     font-size: 13px;
     font-weight: 700;
     text-transform: uppercase;
-    padding: 16px 20px;
+    padding: 10px 20px;
     border-radius: 2px;
     box-shadow: 0 8px 16px rgba(0,0,0,.1), 0 3px 6px rgba(0,0,0,.08);
     outline: 0;
