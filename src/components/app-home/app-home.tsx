@@ -23,13 +23,12 @@ export class AppHome {
   }
 
   componentDidUpdate() {
-    console.log('The component did update');
-    this.goToBottomMessages();    
+    //ugly but if no timeout, missed a message size
+    setTimeout(function(){this.goToBottomMessages();}.bind(this),200);        
   }
   
   goToBottomMessages() {
-    let objDiv = document.getElementById("list");
-    objDiv.scrollTop = objDiv.scrollHeight;
+    window.scrollTo(0,document.body.scrollHeight+200);
   }
 
   saveMessage(msgs:string){
@@ -73,7 +72,7 @@ export class AppHome {
     })
     .then(response => response.json())
     .then(function (data) {
-      if(data.status.code == 200){        
+      if(data.status.code == 200){ 
         this.addMessageToList({
           message : data.result.fulfillment.speech,
           input : true,
@@ -93,6 +92,7 @@ export class AppHome {
   addMessageToList(msg){
     this.messages = [...this.messages, msg];
     this.saveMessage(this.messages);
+    this.goToBottomMessages();
   }
 
   handleMessageChange(event) {

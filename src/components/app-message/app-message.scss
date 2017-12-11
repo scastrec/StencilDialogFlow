@@ -20,13 +20,15 @@ app-message {
     }
     .speech-bubble {
         position: relative;
-        background: #e53935;
+        background: #0069c0;
         border-radius: .4em;
         min-width: 100px;
+        color: white;
     }
 
     .speech-bubble.me {
-        background: #ff6f60;        
+        background: #6ec6ff; 
+        color: black;        
     }
     
     .speech-bubble:after {
@@ -37,7 +39,7 @@ app-message {
         width: 0;
         height: 0;
         border: 20px solid transparent;
-        border-left-color: #e53935;
+        border-left-color: #0069c0;
         border-right: 0;
         margin-top: -20px;
         margin-right: -20px;
@@ -51,7 +53,7 @@ app-message {
         width: 0;
         height: 0;
         border: 20px solid transparent;
-        border-right-color: #ff6f60;
+        border-right-color: #6ec6ff;
         border-left: 0;
         margin-top: -20px;
         margin-left: -20px;     
