@@ -1,6 +1,6 @@
 exports.config = {
   bundles: [
-    { components: ['my-app', 'app-home', 'app-message'] },
+    { components: ['app-chat', 'app-home', 'app-message'] },
   ],
   collections: [
     { name: '@stencil/router' }

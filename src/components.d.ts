@@ -8,6 +8,36 @@ import '@stencil/router';
 
 
 import {
+  AppChat as AppChat
+} from './components/app-chat/app-chat';
+
+declare global {
+  interface HTMLAppChatElement extends AppChat, HTMLElement {
+  }
+  var HTMLAppChatElement: {
+    prototype: HTMLAppChatElement;
+    new (): HTMLAppChatElement;
+  };
+  interface HTMLElementTagNameMap {
+    "app-chat": HTMLAppChatElement;
+  }
+  interface ElementTagNameMap {
+    "app-chat": HTMLAppChatElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "app-chat": JSXElements.AppChatAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface AppChatAttributes extends HTMLAttributes {
+      
+    }
+  }
+}
+
+
+import {
   AppHome as AppHome
 } from './components/app-home/app-home';
 
@@ -33,6 +63,36 @@ declare global {
     export interface AppHomeAttributes extends HTMLAttributes {
       url?: string;
       access_token?: string;
+    }
+  }
+}
+
+
+import {
+  AppMessages as AppMessage
+} from './components/app-message/app-message';
+
+declare global {
+  interface HTMLAppMessageElement extends AppMessage, HTMLElement {
+  }
+  var HTMLAppMessageElement: {
+    prototype: HTMLAppMessageElement;
+    new (): HTMLAppMessageElement;
+  };
+  interface HTMLElementTagNameMap {
+    "app-message": HTMLAppMessageElement;
+  }
+  interface ElementTagNameMap {
+    "app-message": HTMLAppMessageElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "app-message": JSXElements.AppMessageAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface AppMessageAttributes extends HTMLAttributes {
+      message?: any;
     }
   }
 }

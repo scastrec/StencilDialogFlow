@@ -12,6 +12,9 @@ export class AppChat {
       <div class="app-container">
         <header>
           <h1>Chabot</h1>
+          <button class="lines-button arrow arrow-left" type="button" role="button" aria-label="Toggle Navigation">
+            <span class="lines"></span>
+          </button>
         </header>
 
         <main>

@@ -5,20 +5,19 @@ app-home {
     display: flex;
     flex-direction: column;
     height: 100%;
-    margin-top: 56px;
+    background: #fff;
 
     .list {
-      flex: 1 1 auto;
-      margin-bottom: 66px;
+      height: 300px;
+      overflow-y: scroll;
     }
 
     .footer {
       background: #FFF;
-      position: fixed;
       bottom: 0;
       right: 0;
       left: 0;
-      height: 56px;
+      height: 40px;
       display: flex;
       input {
         flex : 6;
@@ -53,3 +52,4 @@ app-home {
     transform: translateY(1px);
   }
 }
+
