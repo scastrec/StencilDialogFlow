@@ -1,4 +1,4 @@
-import { Component, State } from '@stencil/core';
+import { Component, Prop, State } from '@stencil/core';
 
 
 @Component({
@@ -7,14 +7,16 @@ import { Component, State } from '@stencil/core';
 })
 export class AppChat {
 
+  @Prop() dialogflowtoken: string;
   @State() open: boolean = false;
   
-    componentDidLoad() {
-      document.getElementById("header").addEventListener('click', function(){
-        console.log("Clicked header");
-        this.onHeaderClick();
-      }.bind(this));
-    }
+  componentDidLoad() {
+    console.log("dialogflowToken "+this.dialogflowtoken);
+    document.getElementById("header").addEventListener('click', function(){
+      console.log("Clicked header");
+      this.onHeaderClick();
+    }.bind(this));
+  }
 
   onHeaderClick(){
     let elt = document.getElementById('chat');    
@@ -38,7 +40,8 @@ export class AppChat {
 
         <main id="chat" class="slidedown">
           <stencil-router>
-            <stencil-route url='/' component='app-home' exact={true}>
+            <stencil-route url='/' component='app-home' 
+              componentProps={{ 'dialogflowtoken': this.dialogflowtoken}} exact={true}>
             </stencil-route>
           </stencil-router>
         </main>

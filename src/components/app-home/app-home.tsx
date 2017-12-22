@@ -12,7 +12,7 @@ export class AppHome {
   @State() loading : boolean;
 
   @Prop() url = "https://api.dialogflow.com/v1";
-  @Prop() access_token :string = "";
+  @Prop() dialogflowtoken :string;
   
   
   
@@ -67,7 +67,7 @@ export class AppHome {
     fetch(this.url+"/query?v=20170712"+params, {
       method: 'get',
       headers: {
-        "Authorization": "Bearer "+ this.access_token
+        "Authorization": "Bearer "+ this.dialogflowtoken
       }
     })
     .then(response => response.json())

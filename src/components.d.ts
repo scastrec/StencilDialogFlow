@@ -31,7 +31,7 @@ declare global {
   }
   namespace JSXElements {
     export interface AppChatAttributes extends HTMLAttributes {
-      
+      dialogflowtoken?: string;
     }
   }
 }
