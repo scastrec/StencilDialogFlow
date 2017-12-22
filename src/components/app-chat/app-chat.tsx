@@ -1,4 +1,4 @@
-import { Component } from '@stencil/core';
+import { Component, State } from '@stencil/core';
 
 
 @Component({
@@ -7,17 +7,36 @@ import { Component } from '@stencil/core';
 })
 export class AppChat {
 
+  @State() open: boolean = false;
+  
+    componentDidLoad() {
+      document.getElementById("header").addEventListener('click', function(){
+        console.log("Clicked header");
+        this.onHeaderClick();
+      }.bind(this));
+    }
+
+  onHeaderClick(){
+    let elt = document.getElementById('chat');    
+    if(!this.open){
+      //then close
+      elt.classList.remove("slidedown");
+      elt.classList.add("slideup");
+    } else {
+      elt.classList.remove("slideup");
+      elt.classList.add("slidedown");
+    }
+    this.open = !this.open;
+  }
+
   render() {
     return (
       <div class="app-container">
-        <header>
+        <header id="header">
           <h1>Chabot</h1>
-          <button class="lines-button arrow arrow-left" type="button" role="button" aria-label="Toggle Navigation">
-            <span class="lines"></span>
-          </button>
         </header>
 
-        <main>
+        <main id="chat" class="slidedown">
           <stencil-router>
             <stencil-route url='/' component='app-home' exact={true}>
             </stencil-route>

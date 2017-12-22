@@ -1,5 +1,6 @@
 app-chat {
   header {
+    cursor : pointer;    
     background: #2196f3;
     color: white;
     height: 40px;
@@ -9,6 +10,18 @@ app-chat {
     width: 100%;
     z-index: 1;
   }
+
+  .slideup, .slidedown {
+    max-height: 340px;            
+    overflow-y: hidden;
+    -webkit-transition: max-height 0.8s ease-in-out;
+    -moz-transition: max-height 0.8s ease-in-out;
+    -o-transition: max-height 0.8s ease-in-out;
+    transition: max-height 0.8s ease-in-out;
+  }
+  .slidedown {            
+      max-height: 0 ;                    
+  } 
 
   h1 {
     font-size: 1.4rem;
